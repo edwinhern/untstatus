@@ -37,6 +37,7 @@ app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
 app.use("/users", users);
+app.use(express.session({ secret: 'SECRET' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 
