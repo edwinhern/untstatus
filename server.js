@@ -48,9 +48,11 @@ app.get("/", (req, res) => {
   res.send("Invalid endpoint!");
 });
 
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 // Start Server
-app.listen(server_port || 5000, () => {
+app.listen(server_port, () => {
   console.log('Server listening on port ' + server_port);
 });
