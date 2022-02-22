@@ -21,7 +21,7 @@ import {IsAuthenticatedGuard} from './services/is-authenticated.guard';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'register', component: RegisterComponent, canActivate: [IsAuthenticatedGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [] },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [IsAuthenticatedGuard]},
 ];
