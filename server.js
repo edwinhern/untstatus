@@ -27,8 +27,8 @@ const app = express();
 const users = require("./routes/users.js");
 
 // port variable
-const server_port = process.env.HOST_PORT || 3000;
-const server_host = process.env.HOST || "localhost";
+const server_port = process.env.PORT || 8080;
+
 // Set Static Folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -36,8 +36,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/users", users);
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 require("./config/passport")(passport);
 
@@ -45,11 +45,14 @@ app.use("/users", users);
 
 // Index route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Invalid endpoint!");
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 // Start Server
-app.listen(server_host, server_port || 5000, () => {
-  console.log(`Listening at http://${server_host}:${server_port}`);
+app.listen(server_port || 5000, () => {
+  console.log('Server listening on port ' + server_port);
 });
