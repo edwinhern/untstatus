@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname + 'meanProject/dist/mean-project')));
 app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/users", users);
 app.use(express.session({ secret: 'SECRET' })); // session secret
 app.use(passport.initialize());
