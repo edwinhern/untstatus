@@ -4,10 +4,9 @@
   "description": "Express server for untStatus.com",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node server.js",
     "start": "node server.js",
-    "worker": "node server.js",
-    "test": "node server.js"
+    "worker": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,7 @@
     "mongoose": "^6.1.4",
     "passport": "^0.5.2",
     "passport-jwt": "*",
+    "path": "^0.12.7",
     "underscore": "^1.13.2"
   },
   "devDependencies": {
