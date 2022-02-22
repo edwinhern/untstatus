@@ -31,7 +31,7 @@ const users = require("./routes/users.js");
 const server_port = process.env.PORT || 8080;
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname + 'dist/mean-project')));
+app.use(express.static(path.join(__dirname + '/outputPath')));
 
 // Middleware
 app.use(cors());
@@ -49,7 +49,7 @@ app.use("/users", users);
 
 
 app.get('/*', (req, res) => {
-  const fullPath = path.join(__dirname, '/dist/mean-project/index.html');
+  const fullPath = path.join(__dirname, 'outputPath/index.html');
   console.log(' Fetching from.. ' + fullPath);
   res.sendFile(fullPath);
 });
