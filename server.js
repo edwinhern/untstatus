@@ -51,5 +51,5 @@ app.get("/", (req, res) => {
 
 // Start Server
 app.listen(server_host, server_port || 5000, () => {
-  console.log(`Listening at http://${process.env.HOST_NAME}:${port}`);
+  console.log(`Listening at http://${server_host}:${server_port}`);
 });
