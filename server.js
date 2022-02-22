@@ -10,7 +10,7 @@ const cors = require("cors");
 const config = require("./config/database");
 
 // Connect to database
-mongoose.connect(config.database, { useMongoClient: true });
+mongoose.connect(config.database);
 
 // On Connection
 mongoose.connection.on("connected", () => {
