@@ -25,7 +25,6 @@ mongoose.connection.on("error", (err) => {
 // initialize app variables with express()
 const app = express();
 const users = require("./routes/users.js");
-const stripe = require("stripe")(process.env.stripe_key);
 
 // port variable
 const port = process.env.HOST_PORT || 3000;
@@ -49,28 +48,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post('/create-checkout-session', async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
-    line_items: [
-      {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'T-shirt',
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
-    mode: 'payment',
-    success_url: 'https://example.com/success',
-    cancel_url: 'https://example.com/cancel',
-  });
-
-  res.json({ id: session.id });
-});
 
 // Start Server
 app.listen(port, () => {
