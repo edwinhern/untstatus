@@ -10,9 +10,13 @@ import { Observable } from 'rxjs';
 export class AuthService {
   authToken: any;
   user: any;
+  isDev: boolean;
+  
   constructor(
     private http: HttpClient
-  ) {}
+  ) {
+    this.isDev = true;
+  }
 
   
   registerUser(user: any) {
