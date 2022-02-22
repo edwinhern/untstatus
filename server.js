@@ -28,7 +28,7 @@ const users = require("./routes/users.js");
 const stripe = require("stripe")(process.env.stripe_key);
 
 // port variable
-const port = process.env.HOST_PORT || 8080;
+const port = process.env.HOST_PORT || 3000;
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, "public")));
