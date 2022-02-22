@@ -30,9 +30,6 @@ const users = require("./routes/users.js");
 // port variable
 const server_port = process.env.PORT || 8080;
 
-// Set Static Folder
-app.use(express.static(path.join(__dirname + '/outputPath')));
-
 // Middleware
 app.use(cors());
 app.options('*', cors());
@@ -46,6 +43,9 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 app.use("/users", users);
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname + '/outputPath')));
 
 
 app.get('/*', (req, res) => {
