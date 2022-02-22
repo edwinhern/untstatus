@@ -27,8 +27,8 @@ const app = express();
 const users = require("./routes/users.js");
 
 // port variable
-const port = process.env.HOST_PORT || 3000;
-
+const server_port = process.env.HOST_PORT || 3000;
+const server_host = process.env.HOST || "localhost";
 // Set Static Folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -50,6 +50,6 @@ app.get("/", (req, res) => {
 
 
 // Start Server
-app.listen(port, () => {
+app.listen(server_host, server_port || 5000, () => {
   console.log(`Listening at http://${process.env.HOST_NAME}:${port}`);
 });
