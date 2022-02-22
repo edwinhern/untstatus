@@ -34,6 +34,7 @@ app.use(express.static(path.join(__dirname + 'meanProject/dist/mean-project')));
 
 // Middleware
 app.use(cors());
+app.options('*', cors());
 app.use(bodyParser.json());
 app.use("/users", users);
 app.use(passport.initialize());
