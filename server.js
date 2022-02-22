@@ -47,12 +47,12 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 
-// Index route
-app.get("/", (req, res) => {
-  res.send("Invalid endpoint!");
-});
+// // Index route
+// app.get("/", (req, res) => {
+//   res.send("Invalid endpoint!");
+// });
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'meanProject/dist/mean-project/index.html'));
 });
 
