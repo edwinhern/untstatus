@@ -31,7 +31,7 @@ const users = require("./routes/users.js");
 const server_port = process.env.PORT || 8080;
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname + 'meanProject/dist/mean-project')));
+app.use(express.static(path.join(__dirname + 'dist/mean-project')));
 
 // Middleware
 app.use(cors());
@@ -47,13 +47,11 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 
-// // Index route
-// app.get("/", (req, res) => {
-//   res.send("Invalid endpoint!");
-// });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'meanProject/dist/mean-project/index.html'));
+app.get('/*', (req, res) => {
+  const fullPath = path.join(__dirname, '/dist/mean-project/index.html');
+  console.log(' Fetching from.. + ' + fullPath);
+  res.sendFile(fullPath);
 });
 
 // Start Server
