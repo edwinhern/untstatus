@@ -1,0 +1,43 @@
+{
+  "name": "mercury",
+  "version": "1.0.0",
+  "description": "Express server for untStatus.com",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untStatus/mercury.git"
+  },
+  "keywords": [
+    "Express",
+    "JavaScript",
+    "JS"
+  ],
+  "author": "Edwin Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/untStatus/mercury/issues"
+  },
+  "homepage": "https://github.com/untStatus/mercury#readme",
+  "dependencies": {
+    "@stripe/stripe-js": "^1.23.0",
+    "bcryptjs": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "*",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.4",
+    "ngx-stripe": "^13.0.0",
+    "passport": "^0.5.2",
+    "passport-jwt": "*",
+    "stripe": "^8.203.0",
+    "underscore": "^1.13.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
