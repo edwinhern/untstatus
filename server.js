@@ -50,7 +50,7 @@ app.use("/users", users);
 
 app.get('/*', (req, res) => {
   const fullPath = path.join(__dirname, '/dist/mean-project/index.html');
-  console.log(' Fetching from.. + ' + fullPath);
+  console.log(' Fetching from.. ' + fullPath);
   res.sendFile(fullPath);
 });
 
