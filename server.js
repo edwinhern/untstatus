@@ -28,7 +28,7 @@ const app = express();
 const users = require("./routes/users.js");
 
 // port variable
-const server_port = process.env.PORT || 8080;
+const server_port = process.env.HOST_PORT || 8080;
 
 // Middleware
 app.use(cors());
@@ -36,7 +36,7 @@ app.options('*', cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/users", users);
-app.use(session({ secret: 'SECRET' })); // session secret
+app.use(session({ secret: process.env.SECRET || 'SECRET' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -44,17 +44,30 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 
-// Set Static Folder
-app.use(express.static(path.join(__dirname + '/meanProject/dist/mean-project')));
 
+if(server_port == 8080) {
+  app.use(express.static(path.join(__dirname + "/public/")));
+  app.get("/*", (req, res) => {
+    const fullPath = path.join(__dirname, "/public/index.html");
+    console.log(" Fetching from.. " + fullPath);
+    res.sendFile(fullPath);
+  });
+} else {
+  // Set Static Folder
+  app.use(express.static(path.join(__dirname + '/meanProject/dist/mean-project')));
+  app.get('/*', (req, res) => {
+    const fullPath = path.join(__dirname, '/meanProject/dist/mean-project/index.html');
+    console.log(' Fetching from.. ' + fullPath);
+    res.sendFile(fullPath);
+  });
+}
 
-app.get('/*', (req, res) => {
-  const fullPath = path.join(__dirname, '/meanProject/dist/mean-project/index.html');
-  console.log(' Fetching from.. ' + fullPath);
-  res.sendFile(fullPath);
-});
 
 // Start Server
 app.listen(server_port, () => {
-  console.log('Server listening on port ' + server_port);
+  if(server_port == 8080) { // development status
+    console.log(`Listening at http://${process.env.HOST_NAME}:${server_port}`);
+  } else { // deployment status
+    console.log("Server listening on port " + server_port);  
+  }
 });
