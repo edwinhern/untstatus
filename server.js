@@ -28,7 +28,7 @@ const app = express();
 const users = require("./routes/users.js");
 
 // port variable
-const server_port = process.env.HOST_PORT || 8080;
+const server_port = process.env.HOSTPORT || 8080;
 
 // Middleware
 app.use(cors());
@@ -66,7 +66,7 @@ if(server_port == 8080) {
 // Start Server
 app.listen(server_port, () => {
   if(server_port == 8080) { // development status
-    console.log(`Listening at http://${process.env.HOST_NAME}:${server_port}`);
+    console.log(`Listening at http://${process.env.HOSTNAME}:${server_port}`);
   } else { // deployment status
     console.log("Server listening on port " + server_port);  
   }
