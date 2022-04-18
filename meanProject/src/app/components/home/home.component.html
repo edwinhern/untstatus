@@ -1,7 +1,7 @@
-<div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
     <h1>Hi There, Welcome to untStatus</h1>
     <p class="lead">Here we provide open-source information regarding the services the University of North Texas provides.</p>
-   
+
 </div>
   <br>
   <div class="row">
@@ -17,7 +17,7 @@
       <h3>Zoom</h3>
       <p>Zoom is a chat session service that UNT utilizes to host lectures and proctored exams.</p>
     </div>
-    <div style="margin-top: 50px"> </div> 
+    <div style="margin-top: 50px"> </div>
     <div class="card text-white bg-primary mb-3">
       <div class="card-header">Status: {{ rawlist_canvas.description }}</div>
       <div class="card-body">
@@ -77,4 +77,26 @@
         <a href="https://status.zoom.us/" class="card-link text-white">Zoom Status</a>
       </div>
     </div>
+  </div> -->
+
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  class="absolute w-full h-full object-cover">
+    <source src="../../../assets/gradient.webm" type="video/webm; codecs=vp9">
+  </video>
+  <div class="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col ">
+    <h1 class="mb-6 uppercase text-4xl xl:text-5xl">untStatus</h1>
+    <h2 class="mb-2 text-2xl xl:text-3xl tracking-tight">
+      <span>Web Development, </span><span> done right.</span>
+    </h2>
   </div>
+  <div class="animate-bounce flex-grow-0 pb-2 md:pb-5 transition-all duration-1000 z-10">
+    <img
+      src="../../../assets/arrow60.png"
+      alt="scroll down">
+  </div>
+</div>

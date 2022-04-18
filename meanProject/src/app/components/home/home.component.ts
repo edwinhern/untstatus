@@ -4,7 +4,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Title } from '@angular/platform-browser';
 import { observable, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

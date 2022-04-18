@@ -18,9 +18,11 @@ import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'flash-messages-angular';
 import {AuthGuard} from './guards/auth.guard';
 import {IsAuthenticatedGuard} from './services/is-authenticated.guard';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
   { path: 'register', component: RegisterComponent, canActivate: [] },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [IsAuthenticatedGuard]},
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
