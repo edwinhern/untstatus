@@ -11,14 +11,14 @@ export class AuthService {
   authToken: any;
   user: any;
   isDev: boolean;
-  
+
   constructor(
     private http: HttpClient
   ) {
     this.isDev = true;
   }
 
-  
+
   registerUser(user: any) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
