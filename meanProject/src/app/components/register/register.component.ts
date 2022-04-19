@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private title: Title
-    ) { 
+    ) {
       this.title.setTitle('Register - untStatus');
     }
 
@@ -36,13 +36,13 @@ export class RegisterComponent implements OnInit {
        email: this.email,
        password: this.password
      }
-  
+
     // Required fields
     if(!this.validateService.validateRegister(user)){
       this.flashMessage.show('Please fill in all required fields', {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
-    
+
     // Validate Email
     if(!this.validateService.validateEmail(user.email)){
       this.flashMessage.show('Please use a valid email', {cssClass: 'alert-danger', timeout:3000});

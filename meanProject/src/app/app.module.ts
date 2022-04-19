@@ -19,6 +19,8 @@ import { FlashMessagesModule } from 'flash-messages-angular';
 import {AuthGuard} from './guards/auth.guard';
 import {IsAuthenticatedGuard} from './services/is-authenticated.guard';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContentComponent } from './components/content/content.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,6 +39,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     AboutusComponent,
+    ContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
