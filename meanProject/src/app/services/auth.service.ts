@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+// const baseUrl = 'http://localhost:8080/';
+const baseUrl = '';
 @Injectable({
   providedIn: 'root',
 })
@@ -10,6 +12,14 @@ export class AuthService {
   constructor(
     private http: HttpClient
   ) {}
+
+  sendEmail(item : any) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(baseUrl + 'contacts/send', item, {
+      headers: headers
+    });
+  }
 
   // Http get Request: Retreive Canvas status: JSON format
   getCanvasData(): Observable<any> {

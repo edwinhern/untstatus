@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -24,6 +25,9 @@ export class ContentComponent implements OnInit {
     this.fetchAllTurnitinData();
     this.fetchAllZoomData();
   }
+
+
+
 
   fetchAllCanvasData() {
     // Fetch Canvas data and convert to json string

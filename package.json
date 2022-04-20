@@ -26,15 +26,16 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.3",
+    "express-session": "*",
     "helmet": "^4.6.0",
     "jsonwebtoken": "*",
     "moment": "^2.29.1",
     "mongoose": "^6.1.4",
+    "nodemailer": "^6.7.3",
     "passport": "^0.5.2",
     "passport-jwt": "*",
     "path": "^0.12.7",
-    "underscore": "^1.13.2",
-    "express-session": "*"
+    "underscore": "^1.13.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
