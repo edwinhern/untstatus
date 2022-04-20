@@ -26,9 +26,6 @@ export class ContentComponent implements OnInit {
     this.fetchAllZoomData();
   }
 
-
-
-
   fetchAllCanvasData() {
     // Fetch Canvas data and convert to json string
     const dataObservable = this.authService.getCanvasData();
