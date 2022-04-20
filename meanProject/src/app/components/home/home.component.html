@@ -4,9 +4,10 @@
   loop
   muted
   playsinline
+  onloadedmetadata="this.muted = true"
   class="absolute w-full h-full object-cover saturate-150">
-    <source src="../../../assets/bg-video.mp4" type="video/mp4">
-    <source src="../../../assets/gradient.webm" type="video/webm">
+    <source src="../../../assets/bg-video.mp4" type="video/mp4" codecs="hvc1">
+    <source src="../../../assets/gradient.webm" type="video/webm" codecs="vp9">
   </video>
   <div class="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col ">
     <h1 class="mb-6 uppercase text-4xl xl:text-5xl">untStatus</h1>
