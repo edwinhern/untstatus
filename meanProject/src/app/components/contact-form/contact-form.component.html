@@ -8,6 +8,7 @@
   <form *ngIf="toggle == 0" (submit)="OnSubmit()" class="flex flex-col gap-4 mt-16 px-10 lg:mt-20 min-w-full lg:min-w-[500px]">
     <flash-messages></flash-messages>
     <input
+    label="companyName"
     class="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
     [(ngModel)]="companyName"
     id="companyName"
@@ -16,6 +17,7 @@
     type="text"
     placeholder="Company Name">
     <input
+    label="email"
     class="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
     [(ngModel)]="email"
     id="email"
@@ -24,6 +26,7 @@
     required maxLength={128}
     placeholder="Your E-mail">
     <textarea
+    label="message"
     class="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-6 min-h-[16em]"
     [(ngModel)]="message"
     id="message"
