@@ -1,23 +1,25 @@
-<div class="min-h-screen flex flex-col items-center justify-center">
-  <video
-  autoplay
-  loop
-  muted
-  playsinline="true"
-  [muted]="true"
-  class="absolute w-screen h-screen object-cover saturate-150">
-    <source src="../../../assets/bg-video.mp4" type="video/mp4" codecs="hvc1">
-    <source src="../../../assets/gradient.webm" type="video/webm" codecs="vp9">
-  </video>
-  <div class="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col ">
-    <h1 class="mb-6 uppercase text-4xl xl:text-5xl">untStatus</h1>
-    <h2 class="mb-2 text-2xl xl:text-3xl tracking-tight">
-      <span>Web Development, </span><span> done right.</span>
-    </h2>
+<section id="home">
+  <div class="min-h-screen flex flex-col items-center justify-center">
+    <video
+    autoplay
+    loop
+    muted
+    playsinline="true"
+    [muted]="true"
+    class="absolute w-screen h-screen object-cover saturate-150">
+      <source src="../../../assets/bg-video.mp4" type="video/mp4" codecs="hvc1">
+      <source src="../../../assets/gradient.webm" type="video/webm" codecs="vp9">
+    </video>
+    <div class="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col ">
+      <h1 class="mb-6 uppercase text-4xl xl:text-5xl">untStatus</h1>
+      <h2 class="mb-2 text-2xl xl:text-3xl tracking-tight">
+        <span>Web Development, </span><span> done right.</span>
+      </h2>
+    </div>
+    <div class="animate-bounce flex-grow-0 pb-20  md:pb-10 transition-opacity duration-1000 z-10">
+    <a href="#about">
+      <img src="../../../assets/arrow60.png" alt="scroll down">
+    </a>
+    </div>
   </div>
-  <div class="animate-bounce flex-grow-0 pb-20  md:pb-10 transition-all duration-1000 z-10">
-   <a href="#about">
-    <img src="../../../assets/arrow60.png" alt="scroll down">
-   </a>
-  </div>
-</div>
+</section>
